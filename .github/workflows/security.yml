@@ -9,14 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     strategy: { matrix: { language: [python, javascript-typescript] } }
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: github/codeql-action/init@v3
         with: { languages: "${{ matrix.language }}" }
       - uses: github/codeql-action/analyze@v3
   trivy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: aquasecurity/trivy-action@0.28.0
         with: { scan-type: fs, scan-ref: ".", severity: "CRITICAL,HIGH", format: sarif, output: trivy.sarif }
       - uses: github/codeql-action/upload-sarif@v3
@@ -25,7 +25,7 @@ jobs:
   secrets:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with: { fetch-depth: 0 }
       - uses: gitleaks/gitleaks-action@v2
         env: { GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}" }
