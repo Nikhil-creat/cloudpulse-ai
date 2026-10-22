@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CloudPulse AI — Autonomous Multi-Cloud Operations</title>
+<meta name="description" content="Agentic multi-cloud FinOps, security auto-remediation and AI observability. LangGraph agents, corrective RAG, a PyTorch CNN, Groq and Gemini failover, an MCP server and human-approved Terraform fixes.">
+<meta name="keywords" content="CloudPulse AI, FinOps, cloud cost optimization, cloud security, security auto-remediation, AI observability, agentic AI, multi-agent system, LangGraph, retrieval augmented generation, corrective RAG, Qdrant, PyTorch CNN, anomaly detection, Groq, Gemini, LLM gateway, semantic cache, Model Context Protocol, MCP server, Terraform, human in the loop, prompt injection defense, FastAPI, Next.js, TimescaleDB, Docker, Kubernetes, DevSecOps, Nikhil Chary Sriramoju">
+<meta name="author" content="Nikhil Chary Sriramoju">
+<meta name="theme-color" content="#000000">
+<link rel="canonical" href="https://nikhil-creat.github.io/cloudpulse-ai/">
+<link rel="manifest" href="manifest.webmanifest">
+<meta property="og:type" content="website"><meta property="og:site_name" content="CloudPulse AI">
+<meta property="og:title" content="CloudPulse AI — Agentic multi-cloud FinOps, security and AI observability">
+<meta property="og:description" content="Agentic multi-cloud FinOps, security auto-remediation and AI observability. LangGraph agents, corrective RAG, a PyTorch CNN, Groq and Gemini failover, an MCP server and human-approved Terraform fixes.">
+<meta property="og:url" content="https://nikhil-creat.github.io/cloudpulse-ai/">
+<meta property="og:image" content="https://nikhil-creat.github.io/cloudpulse-ai/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="CloudPulse AI">
+<meta name="twitter:description" content="Agentic multi-cloud FinOps, security auto-remediation and AI observability. LangGraph agents, corrective RAG, a PyTorch CNN, Groq and Gemini failover, an MCP server and human-approved Terraform fixes."><meta name="twitter:image" content="https://nikhil-creat.github.io/cloudpulse-ai/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareSourceCode","name":"CloudPulse AI","description":"Agentic multi-cloud FinOps, security auto-remediation and AI observability. LangGraph agents, corrective RAG, a PyTorch CNN, Groq and Gemini failover, an MCP server and human-approved Terraform fixes.","codeRepository":"https://github.com/Nikhil-creat/cloudpulse-ai","programmingLanguage":["Python","TypeScript"],"license":"https://opensource.org/licenses/MIT","author":{"@type":"Person","name":"Nikhil Chary Sriramoju","url":"https://github.com/Nikhil-creat"}}</script>
+
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://avatars.githubusercontent.com; connect-src 'self' https://api.groq.com https://generativelanguage.googleapis.com https://api.github.com; manifest-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="alternate icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 12h4l2.5-7 4 14 3-9 1.5 2H22'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900&family=Instrument+Serif:ital@1&display=swap">
+<style>
+html,body{background:#000000!important;color:#fff}
+:root{--bg:#000;--text:#fff;--muted:#9a9a9a;--stat:#d8d8d8;--border:rgba(255,255,255,.16);--soft:rgba(255,255,255,.1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;position:relative;line-height:1.5}
+a{color:inherit;text-decoration:none}button{font-family:inherit}
+:focus-visible{outline:2px solid #bad0ff;outline-offset:3px}
+.bgfx{position:fixed;inset:0;z-index:0;pointer-events:none;background:
+ radial-gradient(ellipse 70% 50% at 50% 100%,rgba(120,140,190,.16),transparent 70%),
+ linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px) 0 0/56px 56px,
+ linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px) 0 0/56px 56px;
+ -webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,#000 30%,transparent 80%);mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,#000 30%,transparent 80%)}
+.page{position:relative;z-index:1}
+/* header */
+.header{position:sticky;top:0;z-index:50;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:18px 40px 12px;background:linear-gradient(#000 60%,transparent)}
+.logo{display:inline-flex;align-items:center;gap:9px;justify-self:start;font-size:15.5px;font-weight:600;letter-spacing:-.03em}
+.logo svg{width:22px;height:22px}.logo-suffix{font-weight:400}
+nav{display:flex;gap:8px;justify-self:center}
+nav a{position:relative;overflow:hidden;display:inline-flex;align-items:center;height:40px;padding:0 18px;border-radius:7px;border:1px solid rgba(198,198,198,.55);background:linear-gradient(105deg,#050505,#2a2a2a 48%,#4a4a4a);color:#f3f3f3;font-size:14px;letter-spacing:-.01em;white-space:nowrap;transition:background .35s,border-color .35s,box-shadow .35s}
+nav a::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.16) 50%,transparent 70%);transform:translateX(-120%);transition:transform .6s ease}
+nav a:hover{border-color:rgba(235,235,235,.9);background:linear-gradient(105deg,#111,#3a3a3a 45%,#6a6a6a);box-shadow:0 0 18px rgba(200,210,230,.18)}
+nav a:hover::before{transform:translateX(120%)}
+.btn{position:relative;isolation:isolate;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;height:40px;padding:0 16px;border-radius:6px;font-size:13.5px;font-weight:500;letter-spacing:-.02em;white-space:nowrap;cursor:pointer;transition:background .35s,border-color .35s,box-shadow .35s,color .35s}
+.btn::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(115deg,transparent 20%,rgba(255,255,255,.45) 48%,transparent 76%);transform:translateX(-130%);transition:transform .65s ease}
+.btn:hover::after{transform:translateX(130%)}
+.btn-solid{background:linear-gradient(180deg,#fff,#e7e7e7 48%,#cfcfcf);color:#111;border:1px solid #fff;box-shadow:inset 0 1px 0 rgba(255,255,255,.95)}
+.btn-solid:hover{background:linear-gradient(180deg,#fff,#f3f6ff 42%,#d5def2);border-color:#f2f6ff;box-shadow:inset 0 1px 0 #fff,0 0 22px rgba(186,208,255,.35),0 8px 18px rgba(255,255,255,.12)}
+.btn-ghost{background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(0,0,0,.5) 46%,rgba(150,170,200,.1));color:#fff;border:1px solid rgba(198,198,198,.55);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.btn-ghost:hover{border-color:rgba(220,230,255,.8);box-shadow:0 0 24px rgba(170,200,255,.28)}
+.header .btn{justify-self:end}
+.burger{display:none;justify-self:end;width:42px;height:42px;border-radius:6px;border:1px solid var(--border);background:rgba(8,8,8,.55);place-items:center;cursor:pointer;z-index:80}
+.burger span{display:block;width:16px;height:1.5px;background:#fff;margin:2.5px 0;transition:.25s}
+body.menu-open .burger span:nth-child(1){transform:translateY(4px) rotate(45deg)}
+body.menu-open .burger span:nth-child(2){opacity:0}
+body.menu-open .burger span:nth-child(3){transform:translateY(-4px) rotate(-45deg)}
+/* hero */
+.hero{min-height:88vh;min-height:88svh;display:flex;align-items:flex-end;justify-content:center;padding:40px 24px 72px}
+.hero-copy{display:flex;flex-direction:column;align-items:center;text-align:center;max-width:860px;width:100%}
+.badge{display:inline-flex;align-items:center;gap:8px;margin-bottom:22px;padding:9px 15px;border-radius:5px;background:linear-gradient(90deg,#7d7d7d,#2a2a2a 52%,#0a0a0a);color:#f2f2f2;font-size:12.5px;letter-spacing:-.01em}
+.badge svg{width:18px;height:20px;fill:#fff;filter:drop-shadow(0 0 3px rgba(255,255,255,.45))}
+h1{font-weight:500;letter-spacing:-.045em;line-height:1.12;font-size:clamp(34px,5vw,56px)}
+h1 span{display:block}
+h1 em,.serif{font-family:"Instrument Serif","Times New Roman",serif;font-style:italic;font-weight:400;font-size:1.08em;letter-spacing:-.03em;color:var(--muted)}
+.lede{max-width:500px;margin-top:18px;color:var(--muted);font-size:15.5px;letter-spacing:-.015em}
+.actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:26px}
+.actions .btn{height:42px;padding:0 18px}
+.stats{display:flex;justify-content:space-between;gap:24px;padding:0 72px 36px;color:var(--stat);font-size:13.5px;letter-spacing:-.015em}
+.stat{display:inline-flex;align-items:center;gap:12px;white-space:nowrap}.stat svg{width:20px;height:20px}
+/* sections */
+section.s{max-width:1120px;margin:0 auto;padding:96px 28px 0}
+.s h2{font-weight:500;letter-spacing:-.04em;line-height:1.15;font-size:clamp(26px,3.4vw,38px);max-width:640px}
+.s>p.sub{color:var(--muted);max-width:560px;margin-top:12px;font-size:15px;letter-spacing:-.01em}
+.rows{margin-top:36px;border-top:1px solid var(--border)}
+.row{display:grid;grid-template-columns:240px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--border)}
+.row h3{font-size:16px;font-weight:500;letter-spacing:-.02em}.row p{color:var(--muted);font-size:14.5px;max-width:640px}
+.panel{border:1px solid var(--border);border-radius:10px;background:rgba(8,8,8,.7);backdrop-filter:blur(8px)}
+.arch{margin-top:34px;padding:18px;overflow-x:auto}.arch svg{min-width:760px;width:100%;height:auto;display:block}
+.arch text{font-family:Inter,sans-serif;font-size:12px;fill:#e8e8e8}.arch .m{fill:#9a9a9a;font-size:10.5px}
+.arch rect{fill:#0b0b0b;stroke:rgba(255,255,255,.3)}.arch .hot{stroke:#f26b1d}.arch path{stroke:rgba(255,255,255,.4);fill:none;stroke-width:1.2}
+.demo{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px}
+.demo .panel{padding:18px;min-width:0}
+.demo h3{font-size:14px;font-weight:500;margin-bottom:12px;letter-spacing:-.01em}
+canvas#heat{width:100%;height:auto;aspect-ratio:96/40;border-radius:6px;background:#050505;image-rendering:pixelated;display:block}
+.legend{display:flex;justify-content:space-between;color:var(--muted);font-size:11.5px;margin-top:6px}
+.ctrl{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.chip{height:34px;padding:0 12px;border-radius:6px;border:1px solid var(--border);background:transparent;color:#ddd;font-size:12.5px;cursor:pointer;transition:.25s}
+.chip:hover,.chip[aria-pressed=true]{border-color:rgba(220,230,255,.8);background:rgba(255,255,255,.08);color:#fff}
+.result{font-size:13.5px;color:var(--stat);min-height:48px}.result b{color:#fff;font-weight:500}
+.bars{display:grid;gap:5px;margin-top:8px}.bar{display:grid;grid-template-columns:86px 1fr 42px;gap:8px;align-items:center;font-size:11.5px;color:var(--muted)}
+.bar i{display:block;height:5px;border-radius:3px;background:#fff;width:0;transition:width .6s}
+#log{height:290px;overflow-y:auto;font-size:13.5px;display:flex;flex-direction:column;gap:10px;padding-right:4px}
+.m-u{align-self:flex-end;background:#fff;color:#000;border-radius:8px;padding:8px 12px;max-width:88%}
+.m-a{background:rgba(255,255,255,.06);border-radius:8px;padding:8px 12px;max-width:94%}
+.m-a .t{color:var(--muted);font-size:12px}
+.plan{margin-top:10px;padding-top:10px;border-top:1px solid var(--soft);display:grid;gap:6px;font-size:13px}
+.plan .btn{height:34px;font-size:12.5px}.plan .row2{display:flex;gap:8px;margin-top:4px}
+.btn-danger{border:1px solid rgba(255,120,120,.5);color:#ffb3b3;background:transparent}.btn-danger:hover{background:rgba(255,80,80,.1)}
+.stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}.stack span{padding:8px 13px;border:1px solid var(--border);border-radius:6px;font-size:13px;color:var(--stat)}
+table{width:100%;border-collapse:collapse;margin-top:32px;font-size:14px}
+th,td{text-align:left;padding:16px 14px 16px 0;border-bottom:1px solid var(--border);vertical-align:top}
+th{font-weight:500;color:#fff;white-space:nowrap;width:170px}td{color:var(--muted)}
+.me{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:34px}
+.me ul{list-style:none;border-top:1px solid var(--border)}
+.me li{padding:14px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--muted)}.me li b{display:block;color:#fff;font-weight:500;font-size:14.5px}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+footer.foot{max-width:1120px;margin:110px auto 0;padding:28px 28px calc(36px + env(safe-area-inset-bottom));border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;color:var(--muted);font-size:13px}
+footer.foot a:hover{color:#fff}
+.inp{width:100%;height:40px;margin:6px 0 12px;padding:0 12px;border-radius:6px;border:1px solid var(--border);background:rgba(255,255,255,.03);color:#fff;font:inherit;font-size:13.5px}
+.inp::placeholder{color:#666}select.inp{appearance:none}
+.lbl{display:block;font-size:12px;color:var(--muted);margin-top:4px}.lnk{margin-left:6px;color:#bad0ff;text-decoration:underline}
+#alog{height:300px;overflow-y:auto;font-size:13.5px;display:flex;flex-direction:column;gap:10px;padding-right:4px;white-space:pre-wrap}
+.aform{display:flex;gap:8px;margin-top:12px}.aform .inp{margin:0}
+.trace{height:150px;overflow-y:auto;font-size:12px;color:var(--muted);font-family:ui-monospace,Menlo,monospace;display:grid;gap:4px;align-content:start}
+.fm{margin-top:14px}.fm canvas{width:100%;height:20px;display:block;margin-top:4px;image-rendering:pixelated;background:#050505;border-radius:3px}
+.skip{position:absolute;left:-999px;top:8px;z-index:400;background:#fff;color:#000;padding:10px 14px;border-radius:6px;font-size:14px}.skip:focus{left:8px}
+.cred{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:34px}.cred h3{font-size:14px;font-weight:500;margin-bottom:10px;letter-spacing:-.01em}
+.cred ul{list-style:none;border-top:1px solid var(--border)}.cred li{padding:10px 0;border-bottom:1px solid var(--border);font-size:13px;color:var(--muted)}.cred li b{display:block;color:#fff;font-weight:500;font-size:13.5px}
+.gh{margin-top:26px;display:grid;gap:8px;font-size:13.5px;color:var(--muted)}.gh .ghs{display:flex;gap:22px;flex-wrap:wrap;color:var(--stat)}.gh a{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.pal{position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:grid;place-items:start center;padding:14vh 16px 0}
+.pal>div{width:min(560px,100%);border:1px solid var(--border);border-radius:10px;background:#0a0a0a;overflow:hidden}
+.pal input{width:100%;height:50px;padding:0 16px;background:transparent;border:0;border-bottom:1px solid var(--border);color:#fff;font:inherit;font-size:15px;outline:none}
+.pal ul{list-style:none;max-height:320px;overflow-y:auto}.pal li{padding:12px 16px;font-size:14px;color:#ddd;cursor:pointer}.pal li[aria-selected=true]{background:rgba(255,255,255,.09);color:#fff}
+#amic[aria-pressed=true]{border-color:#f26b1d;box-shadow:0 0 18px rgba(242,107,29,.35)}
+@media (max-width:1100px){nav a{padding:0 12px;font-size:13px}}
+@media (max-width:900px){.cred{grid-template-columns:1fr}}
+/* motion: one orchestrated page-load sequence */
+.appear{animation:in 1.05s cubic-bezier(.16,1,.3,1) both;animation-delay:var(--d,.08s)}
+@keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+h1 em{animation:em 1.2s .72s both}@keyframes em{from{opacity:.35;filter:blur(4px)}to{opacity:1;filter:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+@media (max-width:900px){
+ .header{grid-template-columns:1fr auto auto;gap:8px;padding:16px 16px 10px}.header .btn{display:none}.burger{display:grid}
+ .logo,.burger{z-index:80}
+ nav{position:fixed;inset:0;z-index:45;flex-direction:column;justify-content:center;gap:12px;padding:96px 22px 32px;background:rgba(8,8,8,.42);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);opacity:0;visibility:hidden;transition:.28s}
+ body.menu-open{overflow:hidden}body.menu-open nav{opacity:1;visibility:visible}
+ nav a{width:100%;height:56px;font-size:19px;border-radius:10px;justify-content:center}
+ .hero{padding:20px 20px 56px}.stats{flex-direction:column;align-items:center;gap:16px;padding:0 20px 28px}.stat{white-space:normal}
+ .row{grid-template-columns:1fr;gap:6px}.demo,.me{grid-template-columns:1fr}
+ section.s{padding-top:72px}th{width:auto;white-space:normal}
+}
+@media (max-width:560px){.actions{flex-direction:column;width:100%}.actions .btn{width:100%}th,td{display:block;width:100%;padding:0}td{padding-bottom:16px}}
+</style>
+</head>
+<body style="background:#000;color:#fff">
+<a class="skip" href="#top">Skip to content</a>
+<div class="bgfx"></div>
+<div class="page">
+<div class="menu-backdrop"></div>
+<header class="header">
+  <a class="logo appear" style="--d:.08s" href="#top" aria-label="CloudPulse.ai">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h4l2.5-7 4 14 3-9 1.5 2H22"/></svg>
+    <span>CloudPulse<span class="logo-suffix">.ai</span></span>
+  </a>
+  <nav id="site-nav" aria-label="Primary">
+    <a class="appear" style="--d:.16s" href="#platform">Platform</a>
+    <a class="appear" style="--d:.28s" href="#architecture">Architecture</a>
+    <a class="appear" style="--d:.40s" href="#assistant">Assistant</a>
+    <a class="appear" style="--d:.52s" href="#security">Security</a>
+    <a class="appear" style="--d:.64s" href="#credentials">Credentials</a>
+  </nav>
+  <a class="btn btn-solid appear" style="--d:.34s" href="https://github.com/Nikhil-creat/cloudpulse-ai" target="_blank" rel="noopener">View on GitHub</a>
+  <button class="burger appear" style="--d:.34s" id="burger" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"><span></span><span></span><span></span></button>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="hero-copy">
+    <div class="badge appear" style="--d:.22s"><svg viewBox="0 0 24 24"><path d="M12 2.6C12.55 2.6 12.88 3.15 13.08 4.7c.62 4.7 1.52 5.6 6.22 6.22 1.55.2 2.1.53 2.1 1.08s-.55.88-2.1 1.08c-4.7.62-5.6 1.52-6.22 6.22-.2 1.55-.53 2.1-1.08 2.1s-.88-.55-1.08-2.1c-.62-4.7-1.52-5.6-6.22-6.22C3.15 12.88 2.6 12.55 2.6 12s.55-.88 2.1-1.08c4.7-.62 5.6-1.52 6.22-6.22C11.12 3.15 11.45 2.6 12 2.6Z"/></svg>Agentic AI · RAG · CNN · MCP</div>
+    <h1><span class="appear" style="--d:.42s">Run your multi-cloud <em>estate</em> with</span><span class="appear" style="--d:.62s">agents that ask before they act.</span></h1>
+    <p class="lede appear" style="--d:.82s">CloudPulse AI watches AWS, GCP and Kubernetes, spots waste and intrusions with a CNN, and drafts Terraform fixes you approve with one tap.</p>
+    <div class="actions">
+      <a class="btn btn-solid appear" style="--d:.96s" href="#assistant">Talk to the assistant</a>
+      <a class="btn btn-ghost appear" style="--d:1.1s" href="#demo">Inspect the CNN</a>
+    </div>
+  </div>
+</section>
+<footer class="stats">
+  <div class="stat appear" style="--d:1.12s"><svg viewBox="0 0 24 24"><rect x="3.4" y="2.6" width="7.2" height="18.8" rx="3.6" fill="#e8e8e8" opacity=".6"/><rect x="13.4" y="2.6" width="7.2" height="18.8" rx="3.6" fill="#e8e8e8"/><rect x="9.2" y="10.9" width="5.6" height="2.2" rx="1.1" fill="#4a4a4a"/></svg>AWS, GCP and Kubernetes in one telemetry plane</div>
+  <div class="stat appear" style="--d:1.28s"><svg viewBox="0 0 24 24"><rect x="2.4" y="2.4" width="19.2" height="19.2" rx="6.2" fill="#fff"/><path d="M12 7.1v7.4M8.15 12.35L12 16.2l3.85-3.85" stroke="#111" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Groq and Gemini with automatic failover</div>
+  <div class="stat appear" style="--d:1.44s"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.2" fill="#f26b1d"/><path d="M7.5 12.2l3 3 6-6.4" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>Every change dry-run and human-approved</div>
+</footer>
+
+<section class="s" id="platform">
+  <h2>One platform for cost, security and observability.</h2>
+  <p class="sub">Six subsystems, each shipped in the repo with code, schema and tests.</p>
+  <div class="rows">
+    <div class="row"><h3>Telemetry ingestion</h3><p>Celery collectors pull CloudWatch, Cloud Monitoring and the Kubernetes Metrics API into a TimescaleDB hypertable with compression and 90-day retention.</p></div>
+    <div class="row"><h3>CNN anomaly detection</h3><p>Every 15 minutes, 24 hours of eight metrics become an 8×96 heatmap. A PyTorch CNN labels it normal, cost spike, idle or intrusion and opens an alert above 0.8 confidence.</p></div>
+    <div class="row"><h3>Agent swarm</h3><p>A LangGraph graph runs a FinOps optimizer and a Security auditor in parallel, then a Remediation Planner writes the Terraform and stops at an approval gate.</p></div>
+    <div class="row"><h3>Agentic RAG</h3><p>Qdrant indexes CIS benchmarks, runbooks and Terraform state. Agents cite the control or runbook behind each recommendation.</p></div>
+    <div class="row"><h3>Dual-engine LLM gateway</h3><p>Groq Llama-3.3-70b handles fast tool calls and chat. Gemini handles deep reasoning and long context. Circuit breakers, timeouts, token and cost tracking, and a Redis semantic cache sit in front.</p></div>
+    <div class="row"><h3>Governed remediation and MCP</h3><p>Fernet-encrypted vault, JWT roles, a hash-chained audit log the database refuses to edit, and blast-radius limits. The MCP server exposes read and propose tools only. It cannot approve or apply.</p></div>
+  </div>
+</section>
+
+<section class="s" id="architecture">
+  <h2>From metric to approved fix.</h2>
+  <p class="sub">The orange path is the only route that can change your cloud, and it passes through a person.</p>
+  <div class="panel arch">
+  <svg viewBox="0 0 900 330" role="img" aria-label="CloudPulse architecture diagram">
+    <rect x="10" y="20" width="130" height="50"/><text x="75" y="50" text-anchor="middle">AWS · GCP · K8s</text>
+    <rect x="190" y="20" width="140" height="50"/><text x="260" y="44" text-anchor="middle">Celery collectors</text><text class="m" x="260" y="58" text-anchor="middle">60 s schedule</text>
+    <rect x="380" y="20" width="140" height="50"/><text x="450" y="44" text-anchor="middle">TimescaleDB</text><text class="m" x="450" y="58" text-anchor="middle">hypertable</text>
+    <rect x="570" y="20" width="150" height="50"/><text x="645" y="44" text-anchor="middle">Heatmap + CNN</text><text class="m" x="645" y="58" text-anchor="middle">PyTorch · 15 min</text>
+    <rect x="760" y="20" width="130" height="50"/><text x="825" y="44" text-anchor="middle">Security alerts</text><text class="m" x="825" y="58" text-anchor="middle">PostgreSQL</text>
+    <path d="M140 45h50M330 45h50M520 45h50M720 45h40"/>
+    <rect x="10" y="150" width="130" height="50"/><text x="75" y="180" text-anchor="middle">Next.js console</text>
+    <rect x="190" y="150" width="140" height="50"/><text x="260" y="174" text-anchor="middle">FastAPI gateway</text><text class="m" x="260" y="188" text-anchor="middle">REST · SSE · WS · MCP</text>
+    <rect x="380" y="150" width="140" height="50"/><text x="450" y="174" text-anchor="middle">LangGraph swarm</text><text class="m" x="450" y="188" text-anchor="middle">FinOps · Security · Planner</text>
+    <rect x="570" y="150" width="150" height="50"/><text x="645" y="174" text-anchor="middle">LLM router</text><text class="m" x="645" y="188" text-anchor="middle">Groq ⇄ Gemini</text>
+    <rect x="760" y="150" width="130" height="50"/><text x="825" y="174" text-anchor="middle">Redis</text><text class="m" x="825" y="188" text-anchor="middle">semantic cache · broker</text>
+    <path d="M140 175h50M330 175h50M520 175h50M720 175h40"/>
+    <rect x="380" y="260" width="140" height="50"/><text x="450" y="284" text-anchor="middle">Qdrant RAG</text><text class="m" x="450" y="298" text-anchor="middle">CIS · runbooks · tfstate</text>
+    <rect x="190" y="260" width="140" height="50" class="hot"/><text x="260" y="284" text-anchor="middle">Human approval</text><text class="m" x="260" y="298" text-anchor="middle">four-eyes · blast limit</text>
+    <rect x="10" y="260" width="130" height="50" class="hot"/><text x="75" y="284" text-anchor="middle">Terraform apply</text><text class="m" x="75" y="298" text-anchor="middle">Celery · audited</text>
+    <path d="M450 200v60M260 200v60" /><path d="M190 285h-50" style="stroke:#f26b1d"/><path d="M260 200v60" style="stroke:#f26b1d"/>
+    <path d="M450 100v50M450 70v30" /><path d="M825 70v80"/>
+  </svg>
+  </div>
+  <div class="stack"><span>Python 3.11</span><span>FastAPI</span><span>Pydantic v2</span><span>SQLAlchemy 2.0</span><span>TimescaleDB</span><span>Redis</span><span>Celery</span><span>Qdrant</span><span>PyTorch</span><span>LangGraph</span><span>Groq</span><span>Gemini</span><span>Next.js 14</span><span>Tailwind</span><span>Three.js</span><span>OpenTelemetry</span><span>Terraform</span><span>Docker Compose</span></div>
+</section>
+
+<section class="s" id="demo">
+  <h2>Try it. <em class="serif">Everything below runs in your browser.</em></h2>
+  <p class="sub">This demo simulates the pipeline with scripted data so it works on a static host. The real engine is in <code>backend/</code>.</p>
+  <div class="demo">
+    <div class="panel">
+      <h3>CNN heatmap inspector</h3>
+      <canvas id="heat" width="96" height="40" aria-label="Metric heatmap, 8 metrics by 24 hours"></canvas>
+      <div class="legend"><span>24 h ago</span><span>now</span></div>
+      <div class="ctrl" role="group" aria-label="Scenario">
+        <button class="chip" data-s="normal" aria-pressed="true">Normal</button>
+        <button class="chip" data-s="cost_spike" aria-pressed="false">Cost spike</button>
+        <button class="chip" data-s="idle" aria-pressed="false">Idle</button>
+        <button class="chip" data-s="intrusion" aria-pressed="false">Intrusion</button>
+        <button class="btn btn-solid" id="run" style="height:34px">Run inference</button>
+      </div>
+      <div class="result" id="res" aria-live="polite">Pick a scenario, then run inference.</div>
+      <div class="bars" id="bars"></div>
+      <div class="fm"><div class="lbl">Layer-1 feature maps (hand-set Sobel and blob kernels; the trained PyTorch CNN lives in backend/app/cnn)</div><canvas id="fm0" width="94" height="24"></canvas><canvas id="fm1" width="94" height="24"></canvas><canvas id="fm2" width="94" height="24"></canvas></div>
+    </div>
+    <div class="panel">
+      <h3>Copilot with approval gate</h3>
+      <div id="log" aria-live="polite"><div class="m-a"><span class="t">Ask about cost or security. Remediation always stops for your approval.</span></div></div>
+      <div class="ctrl">
+        <button class="chip" data-q="Find idle EC2 instances and cut cost">Cut idle EC2 cost</button>
+        <button class="chip" data-q="Audit my S3 buckets against CIS">Audit S3 against CIS</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="assistant">
+  <h2>An agentic assistant you can talk to. <em class="serif">Bring a free key.</em></h2>
+  <p class="sub">It plans, calls tools, retrieves from a built-in knowledge base and fails over between Groq and Gemini. On the live site it runs through a secured server. Or bring your own free key, which stays in this browser.</p>
+  <div class="demo">
+    <div class="panel">
+      <h3>CloudPulse Assistant</h3>
+      <div id="alog" aria-live="polite"><div class="m-a"><span class="t">Hi. Ask about the platform, cost, security, or try: “run the CNN on an intrusion” or “draft a plan to cut idle EC2 spend”.</span></div></div>
+      <form id="aform" class="aform" autocomplete="off"><input class="inp" id="ain" placeholder="Ask the assistant…" aria-label="Message" maxlength="1500"><button class="btn btn-ghost" id="amic" type="button" aria-pressed="false" aria-label="Speak your question" style="height:40px;padding:0 12px">Mic</button><button class="btn btn-solid" id="asend" type="submit">Send</button></form>
+      <div class="ctrl">
+        <button class="chip" data-a="Run the CNN on an intrusion scenario and explain the result">CNN on intrusion</button>
+        <button class="chip" data-a="Forecast my cloud cost and flag anomalies">Forecast cost</button>
+        <button class="chip" data-a="How does the approval gate keep agents safe?">How is it safe?</button>
+        <button class="chip" data-a="Draft a plan to cut idle EC2 spend">Draft a plan</button>
+        <button class="chip" id="aspeak" type="button" aria-pressed="false">Read answers aloud</button>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>Connection</h3>
+      <label class="lbl" for="prov">Provider</label>
+      <select class="inp" id="prov"><option value="auto">Auto (Groq, then Gemini)</option><option value="groq">Groq only</option><option value="gemini">Gemini only</option></select>
+      <label class="lbl" for="kg">Groq API key <a class="lnk" href="https://console.groq.com/keys" target="_blank" rel="noopener">get one free</a></label>
+      <input class="inp" id="kg" type="password" placeholder="gsk_…" autocomplete="off" spellcheck="false">
+      <label class="lbl" for="km">Gemini API key <a class="lnk" href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">get one free</a></label>
+      <input class="inp" id="km" type="password" placeholder="AIza…" autocomplete="off" spellcheck="false">
+      <div class="ctrl"><button class="btn btn-ghost" id="ksave" style="height:34px">Save on this device</button><button class="btn btn-ghost" id="kclear" style="height:34px">Clear keys</button></div>
+      <div class="result" id="kstat" aria-live="polite">No key saved. Offline mode answers from the built-in knowledge base only.</div>
+      <h3 style="margin-top:18px">Agent trace</h3>
+      <div id="trace" class="trace" aria-live="polite"><span class="t">Tool calls, retrieval verdicts, firewall actions and failovers appear here.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="security">
+  <h2>Security is part of the design, not a layer on top.</h2>
+  <p class="sub">Eleven controls from the repo’s STRIDE model, each with code behind it.</p>
+  <div class="rows">
+    <div class="row"><h3>LLM firewall</h3><p>Regex screening blocks override and exfiltration attempts, and secrets or personal data are redacted before any model sees them. Try pasting a key into the assistant.</p></div>
+    <div class="row"><h3>Indirect injection defense</h3><p>Tool and retrieval output is scrubbed and fenced as untrusted data before it re-enters a prompt.</p></div>
+    <div class="row"><h3>Human-in-the-loop gate</h3><p>Agents propose. People approve. Four-eyes rule, and admin sign-off for high blast radius or any policy violation.</p></div>
+    <div class="row"><h3>Policy-as-code critic</h3><p>Open SSH or RDP, wildcard IAM, public buckets and disabled encryption are rejected, with one self-correction pass.</p></div>
+    <div class="row"><h3>Identity</h3><p>JWT roles, scrypt password hashing and TOTP multi-factor authentication built to RFC 6238.</p></div>
+    <div class="row"><h3>Secrets and audit</h3><p>Fernet-encrypted credential vault and a SHA-256 hash-chained audit log that the database refuses to update or delete.</p></div>
+    <div class="row"><h3>Containers and edge</h3><p>Non-root containers with dropped capabilities, an nginx edge with rate limits and security headers, internal-only metrics, Kubernetes network policies.</p></div>
+    <div class="row"><h3>Supply chain</h3><p>CodeQL, Trivy, gitleaks and Dependabot run in CI. The API reports Prometheus metrics and OpenTelemetry traces.</p></div>
+  </div>
+</section>
+
+<section class="s" id="roadmap">
+  <h2>Six months from foundation to GA.</h2>
+  <table>
+    <tr><th>Month 1</th><td>Monorepo, auth and RBAC, Fernet vault, Timescale schema, AWS collector. Exit: metrics land in the hypertable and the audit chain verifies.</td></tr>
+    <tr><th>Month 2</th><td>GCP and Kubernetes collectors, WebSocket stream, dashboards, compression and retention. Exit: 10k series per minute with p95 query under 300 ms.</td></tr>
+    <tr><th>Month 3</th><td>LLM gateway, semantic cache, Qdrant ingestion. Exit: cache hit rate above 30% and failover tests green.</td></tr>
+    <tr><th>Month 4</th><td>Heatmap pipeline, labelled incident data, training and evaluation loop. Exit: F1 above 0.9 on held-out incidents.</td></tr>
+    <tr><th>Month 5</th><td>Agent swarm, approval UI, Terraform sandbox, MCP server. Exit: every apply is gated and every plan is dry-run.</td></tr>
+    <tr><th>Month 6</th><td>OpenTelemetry dashboards, load and chaos tests, SBOM and image scanning, Helm chart. Exit: pen-test findings closed and a GA tag.</td></tr>
+  </table>
+</section>
+
+<section class="s" id="credentials">
+  <h2>Credentials. <em class="serif">22 certificates, simulations and courses.</em></h2>
+  <p class="sub">BTech final year, Computer Science and Engineering. Completed in 2026 across cloud, cybersecurity, AI and data.</p>
+  <div class="cred">
+    <div><h3>Job simulations · Forage</h3><ul>
+      <li><b>Working as a Software Engineer at a Start Up</b>Jul 2026</li>
+      <li><b>PwC · Technology Consulting</b>Jul 2026</li>
+      <li><b>PwC · Cyber Security Consulting</b>Jul 2026</li>
+      <li><b>Datacom · Automation AI Accelerator</b>Co-pilot to Autonomous Agent · Jul 2026</li>
+      <li><b>Datacom · Cyber Security Operations</b>Jul 2026</li>
+      <li><b>Clifford Chance · Cyber Security Global Virtual Internship</b>Jul 2026</li>
+      <li><b>British Airways · Data Science</b>Jul 2026</li>
+      <li><b>Latham &amp; Watkins · Data and Technology Transactions</b>Jul 2026</li>
+      <li><b>Deloitte · Data Analytics</b>Jun 2026</li>
+      <li><b>Deloitte · Technology</b>Jul 2026</li></ul></div>
+    <div><h3>NASSCOM and Skill India</h3><ul>
+      <li><b>IT Forensic Analyst</b>Digital Hub · Jul 2026</li>
+      <li><b>Product Manager, Web &amp; Mobile</b>Digital Hub · Jul 2026</li>
+      <li><b>Cloud Infrastructure Analyst</b>Digital Hub · Jun 2026</li>
+      <li><b>Analyst Endpoint Security, Cybersecurity</b>Digital Hub · Jun 2026</li>
+      <li><b>Blockchain Architect</b>Digital Hub · Jun 2026</li>
+      <li><b>Yuva AI for All</b>NIELIT and Skill India · NSQF Level 2 · Jun 2026</li></ul></div>
+    <div><h3>Programmes and training</h3><ul>
+      <li><b>AI-Machine Learning Engineer Foundation</b>Reliance Foundation Skilling Academy · Jun 2026</li>
+      <li><b>IoT Security Specialist</b>Reliance Foundation Skilling Academy · Jun 2026</li>
+      <li><b>Industry 4.0 Robotics Systems</b>Reliance Foundation Skilling Academy · 90 hrs · Jul 2026</li>
+      <li><b>Data Analytics internship</b>Thiranex · Jul to Aug 2026</li>
+      <li><b>Mastering Power BI</b>PHN Technology · Jul 2026</li>
+      <li><b>How to Get a Job</b>UNICEF Yuwaah · Jun 2026</li></ul></div>
+  </div>
+</section>
+
+<section class="s" id="builder">
+  <h2>Built by Nikhil Chary Sriramoju.</h2>
+  <p class="sub">Final-year BTech student in Computer Science and Engineering, building agentic AI, distributed systems and security platforms.</p>
+  <div class="me">
+    <ul>
+      <li><b>APEX-AI</b>Agentic multimodal assistant: Groq, LangGraph, MCP, GraphRAG, PyTorch CNN, six Docker services.</li>
+      <li><b>VigilAI Engine Mesh</b>vLLM, agentic RAG, CNN vision and a FastAPI QoS gateway with Prometheus and Grafana.</li>
+      <li><b>Distributed Raft key-value store</b>Raft consensus with MCP, RAG and CNN anomaly detection.</li>
+      <li><b>StreamGuard</b>Real-time fraud pipeline on Kafka, Airflow, dbt and Delta Lake, upgraded with agents.</li>
+    </ul>
+    <ul>
+      <li><b>SecureNav-NEXUS</b>Secure autonomous robot and drone stack: ROS2, SROS2, edge CNN and ViT, eBPF IDS.</li>
+      <li><b>BastionMesh AI</b>Multi-agent mesh with CNN vision, CRAG, MCP tools and Raft-style consensus.</li>
+      <li><b>EcoGrid-AI</b>Self-healing microgrid sentinel with edge CNN, agentic RAG and zero-trust services.</li>
+      <li><b>LLMOps Nexus</b>Semantic caching layer for LLM APIs on FastAPI, Redis and Qdrant.</li>
+    </ul>
+  </div>
+  <div class="gh" id="ghlive" aria-live="polite">Loading live GitHub activity…</div>
+  <div class="links">
+    <a class="btn btn-ghost" href="https://github.com/Nikhil-creat" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn btn-ghost" href="https://in.linkedin.com/in/nikhil-chary-sriramoju-95041b38a" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn btn-solid" href="mailto:sriramojunikhil66@gmail.com">Email Nikhil</a>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <span>© 2026 CloudPulse AI · Built by Nikhil Chary Sriramoju · <button class="chip" id="palbtn" type="button">Commands · Ctrl K</button></span>
+  <span><a href="#platform">Platform</a> · <a href="#architecture">Architecture</a> · <a href="#demo">CNN</a> · <a href="#assistant">Assistant</a> · <a href="#security">Security</a> · <a href="#credentials">Credentials</a> · <a href="https://github.com/Nikhil-creat/cloudpulse-ai">Source</a></span>
+</footer>
+</div>
+
+<script src="js/va.js" defer></script>
+<script src="js/demo.js" defer></script>
+<script src="js/assistant.js" defer></script>
+<script src="js/extras.js" defer></script>
+<script src="/_vercel/insights/script.js" defer></script>
+</body>
+</html>
