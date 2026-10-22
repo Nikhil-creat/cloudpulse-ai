@@ -24,6 +24,6 @@ tiktoken>=0.8
 prometheus-client>=0.21
 opentelemetry-sdk>=1.27
 opentelemetry-exporter-otlp>=1.27
-opentelemetry-instrumentation-fastapi>=0.48b0
+opentelemetry-instrumentation-fastapi>=0.66b1
 pytest>=8
 pytest-asyncio>=0.24
