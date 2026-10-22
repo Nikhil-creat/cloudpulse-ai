@@ -4,7 +4,7 @@
   "private": true,
   "scripts": { "dev": "next dev", "build": "next build", "start": "next start" },
   "dependencies": {
-    "@react-three/fiber": "^8.17.0",
+    "@react-three/fiber": "^9.8.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.453.0",
