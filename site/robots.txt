@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cloudpuls.23641a05k6.workers.dev/sitemap.xml

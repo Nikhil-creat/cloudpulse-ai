@@ -1,0 +1,7 @@
+worker.js
+wrangler.jsonc
+functions
+api
+package.json
+vercel.json
+.assetsignore

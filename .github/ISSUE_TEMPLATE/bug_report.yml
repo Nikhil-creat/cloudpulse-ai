@@ -1,0 +1,9 @@
+name: Bug report
+description: Something is broken
+labels: [bug]
+body:
+  - type: textarea
+    attributes: { label: What happened, description: Steps, expected and actual behavior }
+    validations: { required: true }
+  - type: input
+    attributes: { label: Version, placeholder: "2.1.0" }
