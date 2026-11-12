@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.15-slim
 ENV PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1
 RUN apt-get update && apt-get install -y --no-install-recommends curl unzip && rm -rf /var/lib/apt/lists/*
 # Terraform CLI for dry-run / blast radius checks
